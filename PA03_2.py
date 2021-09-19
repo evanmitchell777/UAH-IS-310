@@ -1,6 +1,6 @@
 """
 Author: Evan Mitchell
-Date: 9/17/21
+Date: 9/18/21
 Assignment: PA03_Processing_Big_List
 Semester/Year: Fall 2021
 Course Number and Title: IS310-01 Adcanced Computer Programming in Business 
@@ -9,11 +9,11 @@ Input: list of names
 Output: list of names and how many times they appear throughout the given list 
 """
 print(__doc__)
+#this imports what I need to count the items in the list
 
-from collections import Counter
+from collections import Counter 
 
-#list of names 
-names= ['Rosalinda', 'Betteanne', 'Larissa', 'Ame', 'Nelli', 'Fredericka', 'Shel', 'Maryann', 'Marie-Ann', 'Alica', 'Coreen',
+list1=['Rosalinda', 'Betteanne', 'Larissa', 'Ame', 'Nelli', 'Fredericka', 'Shel', 'Maryann', 'Marie-Ann', 'Alica', 'Coreen',
 'Ayn', 'Larissa', 'Korrie', 'Germain', 'Sigrid', 'Sigrid', 'Lydie', 'Kandace', 'Adelle', 'Rozanna', 'Ketti', 'Sigrid', 'Georgie', 
 'Druci', 'Merl', 'Maribel', 'Rania', 'Marie-Ann', 'Kally', 'Katrina', 'Ketti', 'Harri', 'Gloria', 'Lynea', 'Myrtie', 'Rozanna', 'Zilvia', 
 'Bibbye', 'Roxane', 'Fionna', 'Cammy', 'Ketti', 'Coreen', 'Maribel', 'Kathye', 'Larissa', 'Harri', 'Rozanna', 'Katrine', 'Bidget', 'Erinn', 
@@ -131,30 +131,12 @@ names= ['Rosalinda', 'Betteanne', 'Larissa', 'Ame', 'Nelli', 'Fredericka', 'Shel
 'Manda', 'Ethelyn', 'Odelinda', 'Perrine', 'Jacquetta', 'Kimberli', 'Ruthie', 'Lura', 'Randa', 'Del', 'Celestyn', 'Isahella', 'Penelope', 'Dona', 'Abagail', 'Cathy', 'Georgie', 'Brande', 'Karil', 'Kellie', 'Nichole', 'Laura', 'Rey', 'Electra', 'Sheila', 'Hortensia', 'Auroora', 'Aggi', 'Minny', 'Rozalin', 'Matelda', 'Corina', 'Luisa', 'Chiarra', 'Ericka', 'Nert',
 'Brittaney', 'Rivi', 'Nanny', 'Sabine', 'Dorie', 'Bessy', 'Audry', 'Charisse', 'Nadia', 'Pen', 'Lanny', 'Emilee', 'Philippe', 'Rici', 'Cleo', 'Prue', 'Brietta', 'Marney', 'Audrey', 'Lexine', 'Nariko', 'Gratia', 'Bren', 'Kasey', 'Darryl', 'Jacquelynn', 'Fianna', 'Vivianna', 'Lanette', 'Rena', 'Lia', 'Lillian', 'Ainsley', 'Liesa', 'Madelina', 'Tallou']
 
+#counts the items in the list
+countlist = (Counter(list1))
 
+#prints and sorts the list in alphabetical order
+output_list = sorted(countlist.items())
 
-#counts names in a list 
-
-output_list = []
-tested_names = []
-#Checks through names 
-for i,name in enumerate(names):
-    occurance = 0
-#makes sure name has not been tested 
-    if name not in tested_names:
-        tested_names.append(name)
-        for i,testname in enumerate(names):
-            if name == testname:
-                occurance += 1 
-            else:
-                pass
-        output_list.append([name,occurance])
-    else:
-        pass
-    
-    
-
-
-for name_instance in sorted(output_list):
+for name_instance in output_list:
     print("{0}: {1}".format(name_instance[0],name_instance[1]))
 
