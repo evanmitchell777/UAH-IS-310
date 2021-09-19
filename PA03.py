@@ -154,7 +154,7 @@ for i,name in enumerate(names):
     
     
 
-
+ #prints and formats the list
 for name_instance in sorted(output_list):
     print("{0}: {1}".format(name_instance[0],name_instance[1]))
 
