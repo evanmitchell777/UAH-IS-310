@@ -137,6 +137,7 @@ countlist = (Counter(list1))
 #prints and sorts the list in alphabetical order
 output_list = sorted(countlist.items())
 
+#prints and formats the list
 for name_instance in output_list:
     print("{0}: {1}".format(name_instance[0],name_instance[1]))
 
